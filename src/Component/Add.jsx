@@ -1,15 +1,17 @@
-import React, { useContext} from "react";
 import { NavLink } from "react-router";
-import { AppContext } from "../App";
+import { useFirebase } from "../Context/Firebase";
 
 function Add() {
-  const { user, setUser } = useContext(AppContext); 
+  const firebase = useFirebase();
+  
+
   const handleData = (e) => {
     e.preventDefault();
-    const id = user.length === 0 ? 0 : user[user.length - 1].id + 1;
+    const id = new Date().getTime();
     const username = e.target[0].value;
     const idea = e.target[1].value;
-    setUser([...user, {id, username, idea }]);
+    console.log(id, username, idea);
+    firebase.addData("users/", { id, username, idea });
     e.target.reset();
   };
 
@@ -53,7 +55,7 @@ function Add() {
               type="text"
               id="website-admin"
               className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
-              placeholder="Bonnie Green"
+              placeholder="Username"
             />
           </div>
         </div>
