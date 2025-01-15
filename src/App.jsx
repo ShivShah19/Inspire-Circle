@@ -1,4 +1,3 @@
-import './App.css'
 import Add from './Component/Add';
 import Home from './Component/Home'
 import { BrowserRouter, Routes, Route } from "react-router";
