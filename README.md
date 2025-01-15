@@ -22,7 +22,7 @@ Welcome to **Inspire Circle**, an **Idea Sharing Platform** where users can shar
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/inspire-circle.git
+   git clone https://github.com/ShivShah19/Inspire-Circle.git
 2. Navigate to the project directory:
 
     ```bash
