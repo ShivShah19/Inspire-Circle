@@ -5,7 +5,7 @@ import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from
 
 
 const firebaseConfig = {
-  apiKey: import.meta.env.APP_KEY,
+  apiKey: import.meta.env.URL_KEY,
   authDomain: "inspire-circle.firebaseapp.com",
   projectId: "inspire-circle",
   storageBucket: "inspire-circle.firebasestorage.app",
