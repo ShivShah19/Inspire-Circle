@@ -4,8 +4,10 @@ import { getDatabase, push, ref, get, update } from "firebase/database";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 
 
+const key = import.meta.env.VITE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: import.meta.env.URL_KEY,
+  apiKey: key,
   authDomain: "inspire-circle.firebaseapp.com",
   projectId: "inspire-circle",
   storageBucket: "inspire-circle.firebasestorage.app",
@@ -57,12 +59,12 @@ export const FirebaseProvider = ({ children }) => {
         console.error("Error fetching data: ", error);
       });
   };
-  
-  
+
+
   const updateData = (path, updatedData) => {
     const db = getDatabase();
     const dataRef = ref(db, path);
-  
+
     update(dataRef, updatedData)
       .then(() => {
         console.log("Data updated successfully!");
@@ -85,14 +87,14 @@ export const FirebaseProvider = ({ children }) => {
   };
 
   useEffect(() => {
-   onAuthStateChanged(auth, (user) => {
-    if(user) setGoogleUser(user);
-    else setGoogleUser(null)
-   })
+    onAuthStateChanged(auth, (user) => {
+      if (user) setGoogleUser(user);
+      else setGoogleUser(null)
+    })
   }, []);
 
   return (
-    <Context.Provider value={{ addData,getData,updateData, userData, signWithGoogle, googleUser }}>
+    <Context.Provider value={{ addData, getData, updateData, userData, signWithGoogle, googleUser }}>
       {children}
     </Context.Provider>
   );
