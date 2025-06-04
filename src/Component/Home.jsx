@@ -3,11 +3,11 @@ import HeadSection from "./HeadSection";
 import IdeaSection from "./IdeaSection";
 
 function Home() {
-  return ( 
-   <>
-   <HeadSection/>
-   <IdeaSection />
-   </>
+  return (
+    <>
+      <HeadSection />
+      <IdeaSection />
+    </>
   );
 }
 

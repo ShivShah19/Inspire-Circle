@@ -13,4 +13,7 @@
 body {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 10px;
+  background: linear-gradient(to bottom right, #111127, #1b203e, #1a0f1f);
+  height: 100vh;
 }
