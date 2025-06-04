@@ -13,7 +13,6 @@ Welcome to **Inspire Circle**, an **Idea Sharing Platform** where users can shar
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript (React or another framework/library)
-- **Backend**: Node.js, Express (or any backend technology you prefer)
 - **Database**: Firebase / MongoDB (or any database of your choice)
 - **Authentication**: Google Sign-In API
 
