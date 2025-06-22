@@ -40,21 +40,21 @@ function Idea({ id, text, author, count }) {
   };
 
   return (
-    <div className="m-5 bg-white rounded-md shadow-md p-3 lg:p-5 cursor-pointer ">
+    <div className="m-4 bg-white rounded-md shadow-md p-3 lg:p-5 cursor-pointer ">
       <div className="flex justify-between">
         <div className="flex justify-between flex-col">
-          <p className="text-gray-700 mb-2">{text}</p>
-          <p className="text-sm text-gray-500">
-            ~ <span className="font-semibold">{author}</span>
+          <p className="text-[#121B2D] text-sm sm:text-lg mb-2">{text}</p>
+          <p className="text-sm text-gray-500 flex items-center ">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#6B7280"><path d="M232-444v-72h496v72H232Z" /></svg>
+            <span className="font-semibold">{author}</span>
           </p>
         </div>
 
         <div className="flex flex-col items-center text-lg">
           <span
             onClick={handleIncrease}
-            className={` text-orange-500 hover:scale-110 transition-transform ${
-              action === 'increase' ? 'cursor-not-allowed' : 'cursor-pointer'
-            }`}
+            className={` text-orange-500 hover:scale-110 transition-transform ${action === 'increase' ? 'cursor-not-allowed' : 'cursor-pointer'
+              }`}
           >
             🔥
           </span>
@@ -63,9 +63,8 @@ function Idea({ id, text, author, count }) {
 
           <span
             onClick={handleDecrease}
-            className={` text-yellow-500 hover:scale-110 transition-transform ${
-              action === 'decrease' ? 'cursor-not-allowed ' : 'cursor-pointer'
-            }`}
+            className={` text-yellow-500 hover:scale-110 transition-transform ${action === 'decrease' ? 'cursor-not-allowed ' : 'cursor-pointer'
+              }`}
           >
             👎
           </span>

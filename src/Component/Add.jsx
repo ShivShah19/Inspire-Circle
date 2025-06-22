@@ -84,6 +84,12 @@ function Add() {
           <span>Continue with Google</span>
         </button>
       </div>
+      {!isSignedIn && (
+        <p className="text-xs text-gray-500 mt-2 text-center sm:text-sm">
+          Hey! Want to write your thoughts? Please log in with Google first.
+        </p>
+      )}
+
       <form className="w-full mt-5" onSubmit={handleData}>
         <div className="my-4">
           <label
@@ -95,7 +101,7 @@ function Add() {
           <div className="flex">
             <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-50 border border-e-0 border-gray-300 rounded-s-md">
               <svg
-                className="w-5 h-5 text-purple-500"
+                className="w-5 h-5 text-blue-700"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -130,10 +136,12 @@ function Add() {
         </div>
         <button
           type="submit"
-          className={`${isSignedIn ? 'bg-purple-500' : 'bg-gray-200'} ${isSignedIn ? 'hover:bg-purple-600' : 'hover:bg-gray-400'} mt-4 w-full text-white text-sm font-medium rounded-lg px-4 py-2  focus:outline-none focus:ring-2 ${isSignedIn ? 'focus:ring-purple-500' : 'focus:ring-gray-500'} focus:ring-offset-2`}
-          disabled={!isSignedIn}>
+          className={`mt-4 w-full text-white text-sm font-medium rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-transform duration-200 ease-in-out
+              ${isSignedIn ? 'bg-gradient-to-r from-blue-500 to-indigo-500 hover:scale-[1.02] hover:shadow-lg focus:ring-blue-500' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
+          disabled={!isSignedIn} >
           Submit
         </button>
+
 
       </form>
     </div>
