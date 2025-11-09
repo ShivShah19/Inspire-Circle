@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 function HeadSection() {
   return (
-    <div className="bg-white/5 backdrop-blur-md border border-white/10 shadow-lg px-4 lg:px-10 py-5 rounded-xl my-0 lg:my-10 w-full m-auto">
+    <div className="bg-[#111]/60 backdrop-blur-md border border-white/10 shadow-lg px-4 lg:px-10 py-5 rounded-xl my-0 lg:my-10 w-full m-auto">
       <div className="mx-auto flex justify-between items-center">
         <NavLink to="/">
           <div className="text-lg lg:text-2xl text-slate-50  font-semibold tracking-tight drop-shadow-sm">
