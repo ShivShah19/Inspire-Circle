@@ -40,38 +40,61 @@ function Idea({ id, text, author, count }) {
   };
 
   return (
-    <div className="m-4 bg-white rounded-md shadow-md p-3 lg:p-5 cursor-pointer ">
-      <div className="flex justify-between">
-        <div className="flex justify-between flex-col">
-          <p className="text-[#121B2D] text-sm sm:text-lg mb-2">{text}</p>
-          <p className="text-sm text-gray-500 flex items-center ">
-            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#6B7280"><path d="M232-444v-72h496v72H232Z" /></svg>
-            <span className="font-semibold">{author}</span>
-          </p>
-        </div>
+    <div
+      className="relative 
+      bg-[#111] rounded-2xl p-4 border border-[#222]
+      shadow-[0_0_40px_rgba(0,0,0,0.35)] hover:shadow-[0_0_60px_rgba(0,0,0,0.55)]
+      transition-all duration-300 hover:-translate-y-1
+      before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br
+      before:from-white/5 before:to-transparent before:opacity-0 hover:before:opacity-10
+      overflow-hidden cursor-pointer group
 
-        <div className="flex flex-col items-center text-lg">
-          <span
-            onClick={handleIncrease}
-            className={` text-orange-500 hover:scale-110 transition-transform ${action === 'increase' ? 'cursor-not-allowed' : 'cursor-pointer'
-              }`}
-          >
-            🔥
-          </span>
+      w-full
+      sm:w-[48%]
+      md:w-[48%]
+      lg:w-[48%]
+      xl:w-[48%]
 
-          <span className="text-lg font-semiBold">{lastCount}</span>
+      m-2">
 
-          <span
-            onClick={handleDecrease}
-            className={` text-yellow-500 hover:scale-110 transition-transform ${action === 'decrease' ? 'cursor-not-allowed ' : 'cursor-pointer'
-              }`}
-          >
-            👎
-          </span>
-        </div>
+      <div className="mb-3 relative z-10">
+        <p className="font-semibold text-sm tracking-wide text-gray-200 group-hover:text-white transition">
+          {author}
+        </p>
       </div>
+
+      <p className="text-sm leading-relaxed text-gray-400 mb-5 relative z-10 group-hover:text-gray-200 transition">
+        {text}
+      </p>
+
+      {/* ✅ FIXED ALIGNMENT HERE */}
+      <div className="flex items-center gap-3 text-lg relative z-10 leading-none">
+
+        <span
+          onClick={handleIncrease}
+          className={`text-orange-400 hover:scale-110 transition-transform align-middle
+        ${action === "increase" ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
+        >
+          🔥
+        </span>
+
+        <span className="text-gray-300 text-sm font-semibold leading-none align-middle group-hover:text-white transition">
+          {lastCount}
+        </span>
+
+        <span
+          onClick={handleDecrease}
+          className={`text-red-400 hover:scale-110 transition-transform align-middle
+        ${action === "decrease" ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
+        >
+          👎
+        </span>
+
+      </div>
+
     </div>
   );
+
 }
 
 export default Idea;
