@@ -27,7 +27,7 @@ function IdeaSection() {
 
 
   return (
-    <div className="p-0">
+    <div className="p-0 flex flex-wrap justify-between">
       {loading ? (
         <div className="flex justify-center">
           <div className="relative">
